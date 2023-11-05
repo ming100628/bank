@@ -2,14 +2,20 @@
 <html>
   <head>
     <title>Bank</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- prettier-ignore -->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <!-- prettier-ignore -->
     <%= stylesheet_link_tag "application" %>
   </head>
 
   <body>
-    <%= yield %>
+    <!-- prettier-ignore -->
+    <% if current_user %>
+      <%= current_user.username %>
+      <%= button_to 'Destroy', '/logout', method: :delete %>
+
+    <% end %> <%= yield %>
   </body>
 </html>
