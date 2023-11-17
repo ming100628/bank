@@ -21,6 +21,11 @@ class User < ActiveRecord::Base
   include BCrypt
 
   before_create :generate_token
+  after_create :generate_accounts
+
+  def generate_accounts
+    accounts.create(currency: 'USD', balance: 0, user_id: id)
+  end
 
   def generate_token
     self.token = SecureRandom.urlsafe_base64

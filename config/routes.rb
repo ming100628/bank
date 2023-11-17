@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   post '/create_user', to: 'users#create'
   delete '/logout', to: 'users#logout'
   get '/users', to: 'users#index'
+  get '/accounts', to: 'accounts#index'
 end

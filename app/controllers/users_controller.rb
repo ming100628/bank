@@ -31,6 +31,7 @@ class UsersController < ApplicationController
     user.password = params[:password]
     user.save
     cookies['token'] = user.token
+    redirect_to '/'
   end
 
   def search

@@ -7,15 +7,26 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <!-- prettier-ignore -->
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application" %>
   </head>
 
   <body>
-    <!-- prettier-ignore -->
-    <% if current_user %>
-      <%= current_user.username %>
-      <%= button_to 'Destroy', '/logout', method: :delete %>
+    <div class="h-screen flex">
+      <div class="w-64 border-2 border-rose-600 h-screen bg-red-300">
+        <!-- prettier-ignore -->
+        <% if current_user %>
+        <%= current_user.username %>
+        <%= button_to 'Destroy', '/logout', method: :delete %>
+        <a class="block p-4 cursor-pointer" href="/accounts">Accounts</a>
 
-    <% end %> <%= yield %>
+        <% else %>
+        <a class="block p-4 cursor-pointer" href="/">Home</a>
+        <a class="block p-4 cursor-pointer" href="/login">Login</a>
+
+        <% end %>
+      </div>
+      <div><%= yield %></div>
+    </div>
   </body>
 </html>
