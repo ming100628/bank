@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   delete '/logout', to: 'users#logout'
   get '/users', to: 'users#index'
   get '/accounts', to: 'accounts#index'
+  get '/transfers', to: 'transactions#new'
+  post '/transfers', to: 'transactions#create'
 end

@@ -19,6 +19,7 @@
         <%= current_user.username %>
         <%= button_to 'Destroy', '/logout', method: :delete %>
         <a class="block p-4 cursor-pointer" href="/accounts">Accounts</a>
+        <a class="block p-4 cursor-pointer" href="/transfers">Transfer</a>
 
         <% else %>
         <a class="block p-4 cursor-pointer" href="/">Home</a>

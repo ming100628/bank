@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   after_create :generate_accounts
 
   def generate_accounts
-    accounts.create(currency: 'USD', balance: 0, user_id: id)
+    accounts.create(currency: 'USD', balance: 1000, user_id: id)
   end
 
   def generate_token

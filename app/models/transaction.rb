@@ -11,7 +11,7 @@
 #  updated_at       :datetime         not null
 #
 class Transaction < ApplicationRecord
-  belongs_to :sender, class_name: 'User'
-  belongs_to :receiver, class_name: 'User'
+  belongs_to :sender, class_name: 'Account'
+  belongs_to :receiver, class_name: 'Account'
   validates :amount, presence: true
 end
