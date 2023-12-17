@@ -1,0 +1,14 @@
+<table class="table-fixed">
+  <!-- prettier-ignore -->
+  <% @currencies.each do |from| %>
+  <% @currencies.each do |to| %>
+  <% next if from == to %>
+  <tr>
+    <td><%= from.to_s.upcase %></td>
+    <td><%= to.to_s.upcase %></td>
+    <td><%= @exchange_rates[from][to] %></td>
+  </tr>
+  <!-- prettier-ignore -->
+  <% end %>
+  <% end %>
+</table>

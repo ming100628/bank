@@ -28,7 +28,6 @@ class User < ActiveRecord::Base
     accounts.create(currency: 'HKD', balance: 10000, user_id: id)
     accounts.create(currency: 'JPY', balance: 100000, user_id: id)
     accounts.create(currency: 'GBP', balance: 1000, user_id: id)
-
   end
 
   def generate_token

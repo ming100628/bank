@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get '/accounts', to: 'accounts#index'
   get '/transfers', to: 'transactions#new'
   post '/transfers', to: 'transactions#create'
+  get '/exchanges', to: 'exchanges#show'
 end
