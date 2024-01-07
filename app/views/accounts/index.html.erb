@@ -1,6 +1,5 @@
 <!-- prettier-ignore -->
+
 <% @accounts.each do |account| %>
-<%= account.id %>
-<%= account.currency %>
-<%= account.balance %>
+<div><%= account.id %> <%= account.currency %> <%= account.balance %></div>
 <% end %>
